@@ -6,12 +6,12 @@ const port=process.env.PORT||3001;
 const app=express();
 const mysql=require("mysql");
 
-if(process.env.NODE_ENV== "production"){
-    app.use(express.static('public'));
-    app.get('*', (req,res) => {
-        req.sendFile(path.resolve (__dirname,'build', 'index.html'))
-    })
-}
+// if(process.env.NODE_ENV== "production"){
+//     app.use(express.static('public'));
+//     app.get('*', (req,res) => {
+//         req.sendFile(path.resolve (__dirname,'build', 'index.html'))
+//     })
+// }
 
 
 const db=mysql.createPool({

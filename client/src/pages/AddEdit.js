@@ -21,7 +21,7 @@ const AddEdit= () => {
     const {id} = useParams();
 
     useEffect ( () => {
-        axios.get(`http://localhost:3001/api/get/${id}`)
+        axios.get(`https://react-crud-info.herokuapp.com/api/get/${id}`)
         .then((resp) => setState({ ...resp.data[0]}))
     },[id])
 
@@ -33,7 +33,7 @@ const AddEdit= () => {
          else {
              if(!id){
                  axios
-                 .post("http://localhost:3001/api/post",{
+                 .post("https://react-crud-info.herokuapp.com/api/post",{
                  name,
                  email,
                  contact
@@ -45,7 +45,7 @@ const AddEdit= () => {
                  setTimeout( () => { history.push("/") },500);
                 }else{
                     axios
-                    .put(`http://localhost:3001/api/update/${id}`,{
+                    .put(`https://react-crud-info.herokuapp.com/api/update/${id}`,{
                     name,
                     email,
                     contact

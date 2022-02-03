@@ -8,7 +8,7 @@ const View = () => {
     const {id}=useParams();
     useEffect(() => {
         axios
-        .get(`http://localhost:3001/api/get/${id}`)
+        .get(`https://react-crud-info.herokuapp.com/api/get/${id}`)
         .then((resp) => setUser({...resp.data[0]}));
     },[id]);
     return(
