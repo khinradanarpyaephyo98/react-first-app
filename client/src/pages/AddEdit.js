@@ -33,7 +33,7 @@ const AddEdit= () => {
          else {
              if(!id){
                  axios
-                 .post("https://react-crud-info.herokuapp.com/api/post",{
+                 .post("https://gracious-jones-d6da06.netlify.app/api/post",{
                  name,
                  email,
                  contact
@@ -45,7 +45,7 @@ const AddEdit= () => {
                  setTimeout( () => { history.push("/") },500);
                 }else{
                     axios
-                    .put(`https://react-crud-info.herokuapp.com/api/update/${id}`,{
+                    .put(`https://gracious-jones-d6da06.netlify.app/api/update/${id}`,{
                     name,
                     email,
                     contact

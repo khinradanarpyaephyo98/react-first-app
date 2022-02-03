@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 const Home=()=>{
     const [data,setData]=useState([]);
     const loadData=async() => {
-        const response=await axios.get("https://react-crud-info.herokuapp.com/api/get");
+        const response=await axios.get("https://gracious-jones-d6da06.netlify.app/api/get");
         setData(response.data)
     }
 
@@ -18,7 +18,7 @@ const Home=()=>{
 
     const deleteContact = (id) => {
         if(window.confirm("Are you sure that you wanted to delete that contact ? ")) {
-            axios.delete(`https://react-crud-info.herokuapp.com/api/remove/${id}`);
+            axios.delete(`https://gracious-jones-d6da06.netlify.app/api/remove/${id}`);
             toast.success("Contact Delete Successfully!");
             setTimeout(() => loadData() , 500);
         }

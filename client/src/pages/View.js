@@ -8,7 +8,7 @@ const View = () => {
     const {id}=useParams();
     useEffect(() => {
         axios
-        .get(`https://react-crud-info.herokuapp.com/api/get/${id}`)
+        .get(`https://gracious-jones-d6da06.netlify.app/api/get/${id}`)
         .then((resp) => setUser({...resp.data[0]}));
     },[id]);
     return(
