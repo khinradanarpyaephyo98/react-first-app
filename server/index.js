@@ -1,8 +1,18 @@
 const express=require("express") ;
 const bodyParser=require("body-parser");
 const cors=require("cors");
+const path=require("path");
+const port=process.env.PORT||3001;
 const app=express();
 const mysql=require("mysql");
+
+if(process.env.NODE_ENV== "production"){
+    app.use(express.static('public'));
+    app.get('*', (req,res) => {
+        req.sendFile(path.resolve (__dirname,'build', 'index.html'))
+    })
+}
+
 
 const db=mysql.createPool({
     host:"localhost",
@@ -68,6 +78,11 @@ app.put("/api/update/:id", (req,res) => {
     });
 });
 
-app.listen(3001,()=> { 
-    console.log("running on port 3001");
-});
+const PORT = process.env.PORT || 3001;
+
+// app.listen(3001,()=> { 
+//     console.log("running on port 3001");
+// });
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+  });
