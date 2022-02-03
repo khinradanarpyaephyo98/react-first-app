@@ -2,7 +2,7 @@ const express=require("express") ;
 const bodyParser=require("body-parser");
 const cors=require("cors");
 const path=require("path");
-const port=process.env.PORT||3001;
+
 const app=express();
 const mysql=require("mysql");
 
@@ -83,6 +83,6 @@ const PORT = process.env.PORT || 3001;
 // app.listen(3001,()=> { 
 //     console.log("running on port 3001");
 // });
-app.listen(PORT, () => {
+app.listen(process.env.PORT||PORT, () => {
     console.log(`server started on port ${PORT}`);
   });
